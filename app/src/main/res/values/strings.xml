@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Game Change Demo</string>
+    <string name="issue_list_error">An error occurred while loading the issues</string>
+    <string name="comment_list_error">An error occurred while loading the comments</string>
+    <string name="retry">Retry</string>
+    <string name="ok">OK</string>
+    <string name="no_comments_available">No comments available</string>
+    <string name="comments">Comments</string>
+    <string name="issues">Issues</string>
+</resources>

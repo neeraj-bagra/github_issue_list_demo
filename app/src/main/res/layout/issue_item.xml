@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.neeraj.gamechangedemo.viewModel.IssueVM" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:onClick="@{(v)->viewModel.showComments(v)}"
+            android:background="@android:color/white">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@{viewModel.issue.title}"
+                android:textSize="@dimen/title_text_size"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_padding_8"
+                android:text="@{viewModel.issue.body}"
+                android:maxLength="140"
+                android:textSize="@dimen/description_text_size"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
