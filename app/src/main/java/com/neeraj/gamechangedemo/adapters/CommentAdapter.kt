@@ -33,11 +33,9 @@ class CommentAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemId(position: Int) = position.toLong()
 
     internal inner class MyViewHolder(private val binding: CommentItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(commentList: Comment?){
-            commentList?.let{
-                val viewModel= CommentVM(it)
-                binding.viewModel=viewModel
-            }
+        fun bind(comment: Comment){
+            val viewModel= CommentVM(comment)
+            binding.viewModel=viewModel
         }
     }
 }

@@ -12,12 +12,14 @@ abstract class IssueRepo(var mContext: Context) {
 
     fun getIssueList(): LiveData<ArrayList<Issue>> {
         return if(AppSharedPref(mContext).getLong(Constants.LAST_ISSUE_API_SYNC_LONG_PREF).isExpiredNow(expiryHours = 24)){
+            //cache expired i.e. more than 24 hours. so call api
             object :IssueRemoteRepo(mContext){
                 override fun onInternetError() {
                     this@IssueRepo.onInternetError()
                 }
             }.getIssueList()
         }else{
+            //cache is not older than 24 Hrs. so show issue from cache
             IssueLocalRepo(mContext).getIssueList()
         }
     }

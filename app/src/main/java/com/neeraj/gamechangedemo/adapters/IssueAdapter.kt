@@ -33,11 +33,9 @@ class IssueAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemId(position: Int) = position.toLong()
 
     internal inner class MyViewHolder(private val binding: IssueItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(issueItem: Issue?){
-            issueItem?.let{
-                val viewModel= IssueVM(it)
-                binding.viewModel=viewModel
-            }
+        fun bind(issueItem: Issue){
+            val viewModel= IssueVM(issueItem)
+            binding.viewModel=viewModel
         }
     }
 }
