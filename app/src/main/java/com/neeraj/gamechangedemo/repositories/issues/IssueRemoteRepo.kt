@@ -31,7 +31,6 @@ abstract class IssueRemoteRepo(var mContext: Context) {
     }
 
     private fun onSuccess(result:ArrayList<Issue>,page: Int){
-        Log.e("issue",result.size.toString())
         if(issueLiveData.value==null){
             issueLiveData.value = result
         }else {

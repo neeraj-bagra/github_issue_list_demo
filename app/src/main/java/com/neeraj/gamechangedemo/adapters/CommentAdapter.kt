@@ -1,12 +1,11 @@
-package com.neeraj.gamechangedemo
+package com.neeraj.gamechangedemo.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.neeraj.gamechangedemo.R
 import com.neeraj.gamechangedemo.databinding.CommentItemBinding
-import com.neeraj.gamechangedemo.databinding.IssueItemBinding
 import com.neeraj.gamechangedemo.model.Comment
 import com.neeraj.gamechangedemo.viewModel.CommentVM
 
@@ -21,7 +20,8 @@ class CommentAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return MyViewHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.comment_item, parent, false))
+        return MyViewHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context),
+            R.layout.comment_item, parent, false))
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {

@@ -35,7 +35,6 @@ abstract class CommentRepo(var issueID:String) {
     }
 
     private fun onSuccess(result:ArrayList<Comment>){
-        Log.e("issue",result.size.toString())
         commentListLiveData.value = result
     }
 

@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
+import com.neeraj.gamechangedemo.adapters.IssueAdapter
 import com.neeraj.gamechangedemo.databinding.ActivityIssueListBinding
 import com.neeraj.gamechangedemo.viewModel.IssueListVM
 
@@ -16,7 +17,7 @@ class IssuesListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityIssueListBinding
     val viewModel: IssueListVM by viewModels()
     private var errorSnackBar: Snackbar? = null
-    private var adapter=IssueAdapter()
+    private var adapter= IssueAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

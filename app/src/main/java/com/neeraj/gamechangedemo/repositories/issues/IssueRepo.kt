@@ -11,16 +11,14 @@ import com.neeraj.gamechangedemo.utils.extensions.isExpiredNow
 abstract class IssueRepo(var mContext: Context) {
 
     fun getIssueList(): LiveData<ArrayList<Issue>> {
-        if(AppSharedPref(mContext).getLong(Constants.LAST_ISSUE_API_SYNC_LONG_PREF).isExpiredNow(expiryHours = 24)){
-            Log.e("issue","1")
-            return object :IssueRemoteRepo(mContext){
+        return if(AppSharedPref(mContext).getLong(Constants.LAST_ISSUE_API_SYNC_LONG_PREF).isExpiredNow(expiryHours = 24)){
+            object :IssueRemoteRepo(mContext){
                 override fun onInternetError() {
                     this@IssueRepo.onInternetError()
                 }
             }.getIssueList()
         }else{
-            Log.e("issue","2")
-            return IssueLocalRepo(mContext).getIssueList()
+            IssueLocalRepo(mContext).getIssueList()
         }
     }
 

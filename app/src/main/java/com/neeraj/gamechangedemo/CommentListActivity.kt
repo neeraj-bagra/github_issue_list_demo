@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
+import com.neeraj.gamechangedemo.adapters.CommentAdapter
 import com.neeraj.gamechangedemo.databinding.ActivityCommentListBinding
 import com.neeraj.gamechangedemo.viewModel.CommentListVM
 
@@ -19,7 +20,7 @@ class CommentListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCommentListBinding
     val viewModel: CommentListVM by viewModels()
     private var errorSnackBar: Snackbar? = null
-    private var adapter=CommentAdapter()
+    private var adapter= CommentAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
